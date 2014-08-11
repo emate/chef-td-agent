@@ -38,7 +38,7 @@ when "ubuntu"
   source =
     if major.nil? || major == '1'
       # version 1.x or no version
-      if dist == 'precise'
+      if ['precise', 'trusty'].include?(dist)
         'http://packages.treasuredata.com/precise/'
       else
         'http://packages.treasuredata.com/debian/'
