@@ -39,14 +39,17 @@ when "ubuntu"
     if major.nil? || major == '1'
       # version 1.x or no version
       if ['precise', 'trusty'].include?(dist)
+        # overwrite dist due to unfoundable repo for trusty
+        dist = "precise"
         'http://packages.treasuredata.com/precise/'
       else
         'http://packages.treasuredata.com/debian/'
       end
-    else
-      # version 2.x or later
-      "http://packages.treasuredata.com/#{major}/ubuntu/#{dist}/"
-    end
+
+#    else
+#      # version 2.x or later
+#      "http://packages.treasuredata.com/#{major}/ubuntu/#{dist}/"
+#    end
 
   apt_repository "treasure-data" do
     uri source
