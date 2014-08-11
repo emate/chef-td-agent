@@ -46,10 +46,10 @@ when "ubuntu"
         'http://packages.treasuredata.com/debian/'
       end
 
-#    else
-#      # version 2.x or later
-#      "http://packages.treasuredata.com/#{major}/ubuntu/#{dist}/"
-#    end
+    else
+      # version 2.x or later
+      "http://packages.treasuredata.com/#{major}/ubuntu/#{dist}/"
+    end
 
   apt_repository "treasure-data" do
     uri source
